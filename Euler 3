@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+
+public class solution3e {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        for(int a0 = 0; a0 < t; a0++)
+        {
+            long n = in.nextLong();
+            long large=0;
+            long divisor =2;
+            while (divisor<=n)
+            {
+                if(n%divisor==0)
+                {
+                    large = divisor;
+                    n = n / divisor;
+                }
+                else
+                    divisor = divisor + 1;
+            }
+            System.out.println(large);
+        }
+        
+    }
+
+}
