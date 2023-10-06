@@ -1,0 +1,20 @@
+import java.util.*;
+
+class Solution2e {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        for (int a0 = 0; a0 < t; a0++) {
+            long n = in.nextLong();
+            long num1 = 1, num2 = 1, sum = 0;
+            while (num1 < n) {
+                if (num1 % 2 == 0)
+                    sum += num1;
+                long num3 = num1 + num2;
+                num1 = num2;
+                num2 = num3;
+            }
+            System.out.println(sum);
+        }
+    }
+}
