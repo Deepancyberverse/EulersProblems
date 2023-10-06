@@ -1,4 +1,5 @@
-# EulersProblems
+# Project Euler Solutions in Java
+
 This repository holds solutions to all the mathematical and computational problems from Project Euler solved using Java. Project Euler offers a vast collection of challenges in the domain of computer science and mathematics.
 
 🎯 Goal
