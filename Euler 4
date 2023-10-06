@@ -1,0 +1,41 @@
+import java.util.*;
+
+public class Solution4e {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        for(int a0 = 0; a0 < t; a0++){
+            long n = in.nextLong();
+            long start = Math.min(n, 998001);
+            if(start==n)
+                start--;
+            
+            for(long i = start; i >= 101101; i--) {  // 101101 is the smallest 6-digit palindrome
+                if(check(""+i) && isProductOfTwo3DigitNumbers(i)) {
+                    System.out.println(i);
+                    break;
+                }
+            }
+        }
+    }
+
+    public static boolean isProductOfTwo3DigitNumbers(long num) {
+        for (int i = 100; i <= Math.sqrt(num) && i < 1000; i++) {
+            if (num % i == 0) {
+                long j = num / i;
+                if (j >= 100 && j < 1000) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    static boolean check(String a)
+    {
+        StringBuilder ab=new StringBuilder(a);
+        ab.reverse();
+        return a.equals(ab.toString());
+    }
+}
