@@ -1,0 +1,36 @@
+import java.util.*;
+public class Euler5 {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        long t = in.nextLong();
+        for(long a0 = 0; a0 < t; a0++){
+            long n = in.nextInt();
+            System.out.println(lcmrange(n));
+        }
+    }
+
+    public static long hcf(long a ,long b)
+    {
+        while (b!=0)
+        {
+            long temp=a;
+            a=b;
+            b=temp%b;
+        }
+        return a;
+    }
+    public static long lcm (long a, long b)
+    {
+        return ((a*b)/hcf(a,b));
+    }
+    public static long lcmrange(long n)
+    {
+        long lcmv=1;
+        for(long i=2;i<=n;i++)
+        {
+            lcmv=lcm(lcmv,i);
+        }
+        return lcmv;
+    }
+}
