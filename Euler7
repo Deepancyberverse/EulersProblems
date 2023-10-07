@@ -1,0 +1,50 @@
+import java.util.*;
+public class Solution7e {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+
+        for(int a0 = 0; a0 < t; a0++){
+            long n = in.nextLong();
+            calc(n);
+        }
+
+    }
+
+    static void calc(long n)
+    {
+        long end=(int)Math.ceil(((n*Math.log(n))+(n*Math.log(Math.log(n)))));
+        long c=1;
+        long fin=2;
+        for(int i=3;i<=Integer.MAX_VALUE;i++)
+        {
+            if(c==n)
+            {
+                 break;
+            }
+            else if(prime(i))
+            {
+                fin=i;
+                c++;
+            }
+        }
+        System.out.println(fin);
+    }
+
+    static boolean  prime(long n)
+    {
+        if(n<2)
+        return false;
+        if (n==2)
+            return true;
+        if (n % 2 == 0) return false;
+
+        for(int i=3;i<=(long)(Math.sqrt(n));i+=2)
+        {
+            if (n%i==0)
+                return false;
+        }
+        return true;
+    }
+}
