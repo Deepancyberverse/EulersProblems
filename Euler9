@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Solution9e {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        for(int a0 = 0; a0 < t; a0++){
+            int n = in.nextInt();
+            int product = -1;
+            for(int x = n/2; x >= 1; x--) {
+                int numerator =(n*n)-2*n*x;
+                int den=2*(n-x);
+                int y=numerator/den;
+                int z = n - x - y;
+                if (x*x + y*y == z*z) {
+                    product = Math.max(product, x * y * z);
+                }
+
+            }
+            if(product==0)
+            System.out.println(-1);
+            else
+            System.out.println(product); 
+        }
+        in.close();
+    }
+}
